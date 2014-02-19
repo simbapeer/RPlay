@@ -133,9 +133,13 @@ public class LaunchThread extends Thread {
 			}
 
 		} catch (IOException e) {
+			System.out.println(e);
 			throw new RuntimeException(e);
 			
-		} finally {
+		} catch(Exception e){
+			System.out.println(e);
+		}
+		finally {
 			try {
 				emitter.stop(); 
 				servSock.close();
